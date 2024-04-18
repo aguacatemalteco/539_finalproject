@@ -507,7 +507,7 @@ footer {
 }
 
 /*********************************
-Mobile view
+Tablet view
 **********************************/
 
 @media screen and (min-width:800px){
@@ -569,7 +569,7 @@ Mobile view
 }
 
 /*********************************
-Desktop
+Desktop view
 **********************************/
 
 @media screen and (min-width:1204px) {
@@ -582,7 +582,7 @@ Desktop
         font-size: 200%;
         display: block;
         text-align: left;
-        margin-left: 5%;
+        margin-left: 2.5%;
         padding: 2% 0;
         text-shadow: 4px 4px #320e3b;
         border-width: 0px;
@@ -619,9 +619,9 @@ Desktop
 
     h2 {
         width: 20%;
-        text-align: center;
-        padding: 1% 0;
-        margin: 2.5% 0;
+        text-align: left;
+        padding: 1%;
+        margin: 2.5% 0 2.5% 2.5%;
         border: 2px solid #320e3b;
     }
 
@@ -631,6 +631,89 @@ Desktop
         position: relative;
         top: -55px;
         z-index: -1;
+    }
+
+    header {
+        padding: 1.5% 1%;
+        position: sticky;
+        top: 0;
+    }
+    
+    header button {
+        display: none;
+    }
+
+    .sidenav .closebtn {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 45%;
+        display: block;
+        min-width: fit-content;
+        position: relative;
+        background-color: #320e3b;
+        padding: 0%;
+    }
+
+    .sidenav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sidenav li {
+        display: block;
+        min-height: 50px;
+        width: 20%;
+    }
+
+    li:first-child {
+        background-color: #ceffec;
+        display: none;
+    }
+    
+    .sidenav a, .sidenav a:visited {
+        padding: 5%;
+        text-decoration: none;
+        font-size: 125%;
+        line-height: 130%;
+        text-align: center;
+        font-weight: 400;
+        color: #ffffff;
+        height: 100%;
+    }
+    
+    .sidenav a.active {
+        font-weight: 700;
+        text-decoration: none;
+        color: #ffffff;
+        border-width: 0px;
+        background-color: #320e3b;
+    }
+
+    .sidenav li.active {
+        border: 2px solid #ffffff;
+    }
+    
+    .sidenav a.active:hover, .sidenav a.active:focus {
+        color: #5b3d62;
+        background-color: #ffffff;
+        border-width: 0px;
+    }
+    
+    .sidenav a:hover, .sidenav a:focus, .sidenav a:visited:hover, .sidenav a:visited:focus {
+        color: #320e3b;
+        background-color: #ffffff;
+        border-width: 0px;
+    }
+    
+    .sidenav li:nth-child(2) {
+        margin-top: 0px;
     }
 }
 
