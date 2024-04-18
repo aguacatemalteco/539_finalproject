@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/PMC.png">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+    <a href = "#main" class="skip">Skip to Main Content</a>
+    <header>
+        <a href="index.html" class="header-image">
+            <img src="images/Header.png" alt="Patrick Mullen-Coyoy">
+        </a>
+        <button type="button" id="menuButton">Menu &#9776;</button>
+        <nav class="sidenav" id="rightNav">
+            <ul>
+                <li><button type="button" class="closebtn" id="xButton">&times;</button></li>
+                <li><a href = "index.html">About</a></li>
+                <li><a href = "poetry.html">Poetry</a></li>
+                <li><a href = "prose.html">Prose</a></li>
+                <li><a href = "press.html">Press</a></li>
+                <li><a class="active" href = "contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <h1>Contact</h1>
+        <div class="container-parallax">
+            <div class="parallax"></div>
+            <div class="container-contact">
+                <p>To get in touch about speaking engagements, readings, interviews, or my amateur astrological services, please fill out the form below!</p>
+                <form action="https://formspree.io/f/xqkrwzna"
+                method="POST">
+                    <label for = "first_id">First Name <span class=required>(Required)</span></label>
+                    <input type="text" name = "firstname" id = "first_id" required>
+
+                    <label for = "last_id">Last Name <span class=required>(Required)</span></label>
+                    <input type="text" name = "lastname" id = "last_id" required>
+
+                    <label for = "email_id">Email <span class=required>(Required)</span></label>
+                    <input type="text" name = "email" id = "email_id" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+
+                    <label for = "message_id">Your Message <span class=required>(Required)</span></label>
+
+                    <textarea name = "message" id = "message_id" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <button type="button" class="backtotop" id="backToTop">To top &#8593;</button>
+    </main>
+</body>
+<footer>
+    <p>Created by Patrick Mullen-Coyoy on 04.23.2024</p>
+</footer>
+<script src="js/myScript.js"></script>
+</html>
