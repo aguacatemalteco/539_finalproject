@@ -65,7 +65,7 @@ header {
     display: inline-block;
 }
 
-header button {
+.menu {
     display: block;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -78,7 +78,7 @@ header button {
     border: 1px solid #ffffff;
 }
 
-header button:hover, header button:focus {
+.menu:hover, .menu:focus {
     background-color: #ffffff;
     border: 1px solid #320e3b;
 }
@@ -640,7 +640,7 @@ Desktop view
         top: 0;
     }
     
-    header button {
+    .menu {
         display: none;
     }
 
