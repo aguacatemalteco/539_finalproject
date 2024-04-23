@@ -2,37 +2,13 @@
  Style Guide
 **********************************/
 /*
-Fonts:
-"Poppins", Verdana, sans-serif --> logo, body, buttons, labels
-"Platypi", "Times New Roman", serif --> h1, nav links
 
-Colors:
 #320e3b - dark purple --> banners, accents
 #5b3d62 - medium purple --> body
 #d1b7d8 - periwinkle --> background for floating content
-#ceffec - icy blue --> primarily for links, focus/hover states
-#ffffff - white --> important text, focus/hover states
+#ceffec - icy blue --> primarily for links, focus states
+#ffffff - white --> important text, focus states
 */
-
-/*********************************
-Mobile view
-**********************************/
-
-/* Gives everything border-box box-sizing for ease of sizing */
-* {
-    box-sizing: border-box;
-}
-
-/* Gives border to items when focused upon */
-*:focus {
-    border: 3px solid #ffffff;
-}
-
-/* Sets smooth scroll behavior */
-
-html {
-    scroll-behavior: smooth;
-}
 
 /* Skip to main styling */
 a.skip, a.skip:visited {
@@ -54,7 +30,18 @@ a.skip:focus {
     top: 20px;
 }
 
-/* Sets the basic styling for the page */
+/*********************************
+Mobile view
+**********************************/
+
+* {
+    box-sizing: border-box;
+}
+
+*:focus {
+    border: 3px solid #ffffff;
+}
+
 body {
     font-family: "Poppins", Verdana, sans-serif;
     color:#ffffff;
@@ -63,6 +50,108 @@ body {
     background-color: #5b3d62;
     line-height: 110%;
 }
+
+header {
+    background-color: #320e3b;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5% 1.5%;
+}
+
+.header-logo {
+    display: inline-block;
+}
+
+.menu {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 2% 1%;
+    width: 25%;
+    min-width: 100px;
+    font-size: 125%;
+    color:#5b3d62;
+    background-color: #d1b7d8;
+    border: 1px solid #ffffff;
+}
+
+.menu:hover, .menu:focus {
+    background-color: #ffffff;
+    border: 1px solid #320e3b;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    border: solid #320e3b;
+    border-width: 0 3px;
+    background-color: #d1b7d8;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.sidenav a, .sidenav a:visited {
+    padding: 10% 0 10% 10%;
+    text-decoration: none;
+    font-size: 150%;
+    font-weight: 400;
+    color: #5b3d62;
+    display: block;
+    font-family: "Platypi", "Times New Roman", serif;
+}
+
+.sidenav a.active {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #ffffff;
+    background-color: #5b3d62;
+}
+
+.sidenav a.active:hover, .sidenav a.active:focus {
+    font-weight: 600;
+    color: #5b3d62;
+    background-color: #ffffff;
+    border: 2px solid #320e3b;
+}
+
+.sidenav a:hover, .sidenav a:focus {
+    background-color: #ffffff;
+    border: 2px solid #320e3b;
+}
+
+.sidenav li:nth-child(2) {
+    margin-top: 20px;
+}
+
+.sidenav .closebtn {
+    display: block;
+    position: absolute;
+    width: 50px;
+    top: 5px;
+    right: 5px;
+    font-size: 36px;
+    margin: 0 0 0 50px;
+    color: #ffffff;
+    background-color: #5b3d62;
+    border-radius: 100%;
+    padding: 0px;
+    border: 1px solid #ffffff;
+}
+
+.sidenav .closebtn:hover, .sidenav .closebtn:focus {
+    color: #5b3d62;
+    background-color: #ffffff;
+    border: 1px solid #5b3d62;
+}
+
 
 h1 {
     font-family: "Platypi", "Times New Roman", serif;
@@ -85,139 +174,12 @@ a:visited {
     color:#d1b7d8;
 }
 
-/* Italicizes the titles of publications as they appear throughout copy.*/
 .titles {
     font-style: italic;
 }
 
-/* Foundational header style,  allows for logo and menu button to be spaced appropriately*/
-header {
-    background-color: #320e3b;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2.5% 1.5%;
-}
+/* Setting up parallax photo in the background */
 
-/* Allows for changing width if need be*/
-.header-logo {
-    display: inline-block;
-}
-
-/* Menu button styling; min-width works to avoid wrap on the text and icon */
-.menu {
-    display: block;
-    font-family: "Poppins", Verdana, sans-serif;
-    font-weight: 600;
-    padding: 2% 1%;
-    width: 25%;
-    min-width: 100px;
-    font-size: 125%;
-    color:#5b3d62;
-    background-color: #d1b7d8;
-    border: 1px solid #ffffff;
-}
-
-.menu:hover, .menu:focus {
-    background-color: #ffffff;
-    border: 1px solid #320e3b;
-}
-
-/* Styling for when the nav is not in use. Display:none makes it so that keyboard users do not have to tab through "hidden" links when not open. */
-
-.sidenav {
-    height: 100%;
-    width: 0%;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    border: solid #320e3b;
-    border-width: 0 3px;
-    background-color: #d1b7d8;
-    overflow-x: hidden;
-    padding-top: 60px;
-}
-
-/* Styling that is applied when nav is in use. Width and display changed to allow user to interact with links in nav. */
-.overlay {
-    height: 100%;
-    width: 35%;
-    display: block;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    border: solid #320e3b;
-    border-width: 0 3px;
-    background-color: #d1b7d8;
-    overflow-x: hidden;
-    padding-top: 60px;
-}
-
-/* Styling for links in nav and focus/hover states. */
-.overlay a, .overlay a:visited {
-    padding: 10% 0 10% 10%;
-    text-decoration: none;
-    font-size: 150%;
-    font-weight: 400;
-    color: #5b3d62;
-    display: block;
-    font-family: "Platypi", "Times New Roman", serif;
-}
-
-.overlay a.active {
-    font-weight: 700;
-    text-decoration: underline;
-    color: #ffffff;
-    background-color: #5b3d62;
-}
-
-.overlay a.active:hover, .overlay a.active:focus {
-    font-weight: 600;
-    color: #5b3d62;
-    background-color: #ffffff;
-    border: solid #320e3b;
-    border-width: 2px 0;
-}
-
-.overlay a:hover, .overlay a:focus {
-    background-color: #ffffff;
-    border: solid #320e3b;
-    border-width: 2px 0;
-}
-
-/* Creates small bit of margin between top link and "X" button. */
-.overlay li:nth-child(2) {
-    margin-top: 20px;
-}
-
-/* Styles the "x" close button to be in the top right corner and shapes a circle around the "x" itself. */
-.overlay .closebtn {
-    display: block;
-    position: absolute;
-    width: 50px;
-    top: 10px;
-    right: 10px;
-    font-size: 36px;
-    margin: 0 0 0 50px;
-    color: #ffffff;
-    background-color: #5b3d62;
-    border-radius: 100%;
-    padding: 0px;
-    border: 1px solid #ffffff;
-}
-
-.overlay .closebtn:hover, .overlay .closebtn:focus {
-    color: #5b3d62;
-    background-color: #ffffff;
-    border: 1px solid #5b3d62;
-}
-
-/* Sets up grid that contains principal content on every page */
 .container-parallax {
     display: grid;
     min-height: 900px;
@@ -227,7 +189,6 @@ header {
     align-items: center;
 }
 
-/* Sets up background photo with a parallax effect, so content scrolls while background image does not. */
 .parallax {
     grid-area: 1/1/5/-1;
     background-image: url("../images/AriBackground.png");
@@ -243,7 +204,8 @@ header {
     border: 2px solid #ceffec;
 }
 
-/* Styling for various components of the "About" page*/
+/* Bio page containers and content */
+
 img {
     width: 100%;
 }
@@ -274,21 +236,18 @@ figcaption {
     padding: 5%;
 }
 
-/* Styles and positions headshot/caption */
-.container-bio figure {
+.container-bio figure { /* Headshot and caption */
     grid-area: 1/1/2/-1;
     max-height: fit-content;
 }
 
-/* Styles and positions bio copy */
-.container-bio p {
+.container-bio p { /* Bio copy */
     grid-area: 2/1/3/-1;
     border: solid #320e3b;
     border-width: 0 0 2px 0;
     max-height: fit-content;
 }
 
-/* Container for social media links */
 .container-socials {
     display: flex;
     background-color: #5b3d62;
@@ -301,9 +260,7 @@ figcaption {
     margin: 0 2.5%;
 }
 
-/* Styling for various components of the "Poetry", "Prose", and "Press" pages*/
-
-/* Flexbox allows items to be justified and aligned via flex even though the entire flexbox is placed within a grid*/
+/* Poetry page containers and content */
 .container-shelf {
     grid-area: 1/1/5/-1;
     display: flex;
@@ -312,7 +269,6 @@ figcaption {
     height: 100%;
 }
 
-/* h2 is a banner that spreads across the page */
 h2 {
     font-family: "Platypi", "Times New Roman", serif;
     color: #ffffff;
@@ -327,7 +283,10 @@ h2 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Flexbox arranges publication cards for each year */
+hr {
+    display: none;
+}
+
 .container-binder {
     display: flex;
     flex-direction: column;
@@ -337,7 +296,6 @@ h2 {
     margin-bottom: 2%;
 }
 
-/* Overall publication card styling, including shadow. This is the container in which various publication card components "live" */
 .pubcard {
     display: block;
     width: 90%;
@@ -346,23 +304,20 @@ h2 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Publication title*/
-h3 {
-    font-family: "Poppins", Verdana, sans-serif;
+h3 { /* Publication */
+    font-family: "Poppins", sans-serif;
     color: #ceffec;
     font-size: 90%;
     font-weight: 600;
 }
 
-/* Title of piece */
-h4 {
+h4 { /* Title of piece */
     font-family: "Platypi", "Times New Roman", serif;
     font-size: 125%;
     font-weight: 500;
     line-height: 125%;
 }
 
-/* Top half of publication card */
 .tophalf {
     border-radius: 15px 15px 0 0;
     background-color: #5b3d62;
@@ -370,12 +325,11 @@ h4 {
     padding: 2%;
 }
 
-/* "Expand" button styling */
 .opencard {
     width: 100%;
     color: #320e3b;
     background-color: #d1b7d8;
-    font-family: "Poppins", Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 80%;
     font-weight: 500;
     font-style: italic;
@@ -390,7 +344,6 @@ h4 {
     border: solid #320e3b;
 }
 
-/* Contents of publication card when expanded. */
 .bottomhalf {
     display: none;
     color: #320e3b;
@@ -406,18 +359,16 @@ h4 {
     color: #320e3b;
 }
 
-/* Bolds text within the card contents */
 .details {
     font-weight: 600;
 }
 
-/* "Close" button styling */
 .closecard {
     display: none;
     width: 100%;
     color: #ffffff;
     background-color: #320e3b;
-    font-family: "Poppins", Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 80%;
     font-weight: 500;
     font-style: italic;
@@ -425,7 +376,6 @@ h4 {
     border-radius: 0 0 15px 15px;
 }
 
-/* iframe styling for various sites' audio embeds */
 .soundcloud {
     display: block;
     width: 95%;
@@ -448,9 +398,8 @@ h4 {
     margin: 2% auto;
 }
 
-/* Styling for various components of the "Contact" page */
+/* Contact page container and content */
 
-/* Container in which the contact information "lives," so that the paragraph explanation and form itself can be styled within a grid. */
 .container-contact {
     grid-area: 2/2/4/4;
     display: grid;
@@ -460,14 +409,12 @@ h4 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Explanation paragraph */
 .container-contact p {
     color: #320e3b;
     background-color: #d1b7d8;
     padding: 5%;
 }
 
-/* Contact form and styling for various label and input components */
 form {
     display: grid;
     gap: 1%;
@@ -477,14 +424,12 @@ form {
     padding-bottom: 50px;
 }
 
-/* Label styling */
 label {
     grid-column: 1/-1;
     padding: 5% 0 0 5%;
     font-weight: 500;
 }
 
-/* Text box styling */
 input[type="text"] {
     grid-column: 1/-1;
     margin: 5% 0 5% 5%;
@@ -498,7 +443,6 @@ input[type="text"]:focus {
     background-color: #ceffec;
 }
 
-/* Text area styling */
 textarea {
     grid-column: 1/-1;
     margin-left: 5%;
@@ -513,7 +457,6 @@ textarea:focus {
     background-color: #ceffec;
 }
 
-/* Submit button styling */
 input[type="submit"] {
     grid-column: 1/-1;
     width: 90%;
@@ -522,7 +465,7 @@ input[type="submit"] {
     color: #320e3b;
     background-color: #ceffec;
     border: 2px solid #ffffff;
-    font-family: "Poppins", Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 100%;
 }
@@ -532,20 +475,18 @@ input[type="submit"]:focus, input[type="submit"]:hover {
     border: 2px solid #ceffec;
 }
 
-/* "Required" text styling */
 .required {
     color: #ceffec;
     font-size: 80%;
     font-weight: 400;
 }
 
-/* Styles back-to-top button once it appears; default state is to not appear */
 .backtotop {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 30px;
-    font-family: "Poppins", Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     padding: 2% 1%;
     width: 20%;
@@ -562,7 +503,6 @@ input[type="submit"]:focus, input[type="submit"]:hover {
     border: 1px solid #ffffff;
 }
 
-/* Styles the footer to take up a small amount of space */
 footer {
     display: block;
     color: #ffffff;
@@ -578,7 +518,7 @@ Tablet view
 **********************************/
 
 @media screen and (min-width:800px){
-    /* Styles publication cards to display side-by-side*/
+    /* Style publication cards to display side-by-side*/
     .container-binder {
         display: flex;
         flex-direction: row;
@@ -587,13 +527,12 @@ Tablet view
         align-items: flex-start;
     }
 
-    /* Makes publication cards slightly smaller to accomodate side-by-side display */
     .pubcard {
         width: 48%;
         margin: 1% 0;
     }
 
-    /* Updates styling of top half of cards to better fit with new size */
+    /* Update styling of top half of cards to better fit with new size */
     .tophalf {
         display: flex;
         flex-direction: column;
@@ -606,7 +545,7 @@ Tablet view
         text-align: center;
     }
 
-    /* Updates first and last name labels and text boxes to be side-by-side*/
+    /* Contact page */
     label:first-child {
         grid-column: 1/2;
         padding: 10% 0 0 10%;
@@ -641,8 +580,6 @@ Desktop view
 **********************************/
 
 @media screen and (min-width:1204px) {
-    
-    /* Updates font sizes for body and h1 slightly to account for larger screen size */
     body {
         font-size: 125%;
         line-height: 125%;
@@ -658,50 +595,66 @@ Desktop view
         border-width: 0px;
     }
 
-    /* Rearranges "About" page content to display headshot and bio side-by-side with social media links beneath them. */
     .container-bio {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* Headshot and caption */
-    .container-bio figure {
+    .container-bio figure { /* Headshot and caption */
         grid-area: 1/1/2/2;
     }
 
-    /* Sets width of headshot, not the social link images */
-    figure img {
-        min-width: 300px;
-    }
-
-    /* Bio copy */
-    .container-bio p {
+    .container-bio p { /* Bio copy */
         grid-area: 1/2/2/3;
     }
 
-    /* Social links */
     .container-socials {
         grid-column: 1/-1;
         padding: 1.5%;
     }
 
-    /* Makes header sticky when scrolling down */
+    figure img {
+        min-width: 300px;
+    }
+
+    .pubcard {
+        width: 30%;
+    }
+
+    .tophalf {
+        min-height: 140px;
+    }
+
+    h2 {
+        width: 20%;
+        text-align: left;
+        padding: 1%;
+        margin: 2.5% 0 2.5% 2.5%;
+        border: 2px solid #320e3b;
+    }
+
+    hr {
+        display: block;
+        border: 2px solid #320e3b;
+        position: relative;
+        top: -55px;
+        z-index: -1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
     header {
         padding: 1.5% 1%;
         position: sticky;
         top: 0;
     }
     
-    /* Removes menu button */
     .menu {
         display: none;
     }
 
-    /* Removes "x" button from nav */
     .sidenav .closebtn {
         display: none;
     }
 
-    /* Sets nav to display in the header rather than as a side overlay */
     nav {
         display: block;
     }
@@ -716,7 +669,6 @@ Desktop view
         padding: 0%;
     }
 
-    /* Styles nav links horizontally and with a different appearance */
     .sidenav ul {
         display: flex;
         flex-direction: row;
@@ -734,7 +686,6 @@ Desktop view
     }
     
     .sidenav a, .sidenav a:visited {
-        display: block;
         padding: 5%;
         text-decoration: none;
         font-size: 125%;
@@ -743,7 +694,6 @@ Desktop view
         font-weight: 400;
         color: #ffffff;
         height: 100%;
-        font-family: "Platypi", "Times New Roman", serif;
     }
     
     .sidenav a.active {
@@ -759,7 +709,6 @@ Desktop view
     }
     
     .sidenav a.active:hover, .sidenav a.active:focus {
-        font-weight: 600;
         color: #5b3d62;
         background-color: #ffffff;
         border-width: 0px;
@@ -774,37 +723,8 @@ Desktop view
     .sidenav li:nth-child(2) {
         margin-top: 0px;
     }
-
-    /* Pub cards are made slightly smaller overall and adjusted top */
-    .pubcard {
-        width: 30%;
-    }
-
-    /* Updates styling of top half of cards to better fit with new size */
-    .tophalf {
-        min-height: 140px;
-    }
-
-    /* h2 becomes a smaller "block" on the left side of the page */
-    h2 {
-        width: 10%;
-        text-align: center;
-        padding: 1%;
-        margin: 2.5% 0 2.5% 1%;
-        border: 2px solid #320e3b;
-    }
-
-    /* Gives this flexbox a border and transparent background to make it clearer which grouping fits under which year */
-    .container-binder {
-        border: 4px solid #320e3b;
-        border-radius: 15px;
-        padding: 5% 2%;
-        width: 98%;
-        margin: 0 auto 2% auto;
-        background-color: rgba(50, 14, 59, 0.3);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-    }
 }
+
 
 /*********************************
 Reduced motion
@@ -812,18 +732,16 @@ Reduced motion
 
 /* Removes movement of "skip to main" link and "button-like" animations for "jump to content" links for users with reduced-motion preferences turned on.*/
 @media screen and (prefers-reduced-motion: reduce) {
-    /* Returns scrolling to normal */
-    html {
-        scroll-behavior: auto;
-    }
-    
-    /* Takes away transition for "Skip to main" */
     a.skip, .jump {
         transition: none;
+      }
+
+    .jump:active {
+        box-shadow: 0 5px 0 #ceffec;
+        transform: none;
     }
 
-    /* Turns off parallax effect so that background and content scrolls together */
-    .parallax {
-        background-attachment: initial;
+    .container-bio {
+        grid-template-columns: 1fr 1fr;
     }
 }

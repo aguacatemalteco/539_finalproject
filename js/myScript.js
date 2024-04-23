@@ -1,16 +1,21 @@
-// Opens up sidebar nav and darkens main
+//Allows side nav overlay to open and close
+
+let rightNav = document.querySelector("#rightNav")
+
+// Opens overlay upon hitting Menu button
 document.querySelector("#menuButton").addEventListener("click", function () {
-    document.querySelector("#rightNav").style.width = "35%";
-    document.querySelector("#rightNav").style.display = "block";
+    rightNav.classList.remove("sidenav");
+    rightNav.classList.add("overlay");
     document.querySelector("main").style.opacity = "15%";
 })
 
-// Closes sidebar nav and returns main to normal
+// Closes overlay upon hitting "X" button
 document.querySelector("#xButton").addEventListener("click", function () {
-    document.querySelector("#rightNav").style.width = "0%";
-    document.querySelector("#rightNav").style.display = "none";
+    rightNav.classList.remove("overlay");
+    rightNav.classList.add("sidenav");
     document.querySelector("main").style.opacity = "100%";
 })
+
 
 // Back to top button
 let backToTop = document.querySelector("#backToTop");
@@ -37,6 +42,7 @@ let openCards = document.querySelectorAll(".opencard");
 let bottomHalves = document.querySelectorAll(".bottomhalf");
 let closeCards = document.querySelectorAll(".closecard");
 
+// Open button
 openCards.forEach(function (openCardBtn, index) {
     openCardBtn.addEventListener('click', function() {
       openCards[index].style.display = "none";
@@ -45,6 +51,7 @@ openCards.forEach(function (openCardBtn, index) {
     });
 })
 
+//Close button
 closeCards.forEach(function (closeCardBtn, index) {
     closeCardBtn.addEventListener('click', function() {
       closeCards[index].style.display = "none";
