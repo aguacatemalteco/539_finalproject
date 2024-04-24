@@ -20,7 +20,7 @@ document.querySelector("#xButton").addEventListener("click", function () {
 // Back to top button
 let backToTop = document.querySelector("#backToTop");
 
-// Back to top button appears upon scrolling down 40 pixels
+// Back to top button appears upon scrolling down 30 pixels
 window.addEventListener("scroll", function () {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
         backToTop.style.display = "block";
